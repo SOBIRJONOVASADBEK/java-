@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:http="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+ <bean id="testBean" class="uz.sobirjonov.spring.spring1.TestBean">
+       <constructor-arg value="Asadbek"/>
+   </bean>
+
+    <bean id="musicBean" class="uz.sobirjonov.spring.spring2.ClassicalMusic"></bean>
+
+    <bean id="musicBean1" class="uz.sobirjonov.spring.spring3.ClassicalMusic1"></bean>
+
+    <bean id="musicBean2" class="uz.sobirjonov.spring.spring4.ClassicalMusic2"></bean>
+
+    <bean id="musicPlayer" class="uz.sobirjonov.spring.spring3.MusicPlayer1">
+        <constructor-arg ref="musicBean1"/>
+    </bean>
+
+    <bean id="musicPlayer1" class="uz.sobirjonov.spring.spring4.MusicPlayer2">
+        <property name="music" ref="musicBean2"/>
+        <property name="name" value="Some name"/>
+        <property name="volume" value="0"/>
+    </bean>
+
+
+
+</beans>
